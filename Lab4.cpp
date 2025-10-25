@@ -22,7 +22,15 @@ int main()
 
     if (numbers[0] > numbers[len])  
     {
-        std::sort(numbers, numbers + 10);  
+        for (int i = 0; i < 10 - 1; i++) {
+            for (int j = 0; j < 10 - i - 1; j++) {
+                if (numbers[j] > numbers[j + 1]) {
+                    std::swap(numbers[j], numbers[j + 1]);
+                }
+
+
+            }
+        }
     }
 
     cout << "Результирующий массив: ";
@@ -72,21 +80,18 @@ int main()
     cout << "Столбец 3: " << summ[2] << endl;  
     cout << "Столбец 4: " << summ[3] << endl;  
 
-    int max_num = *max_element(summ, summ + 4);
-    int count = 0;
-    int index;
 
-    for (int j = 0; j < 4; j++) 
-    {
-        count += 1;
-        if (summ[j] == max_num) 
-        {
-            index = count - 1;
+    int max_index = 0;
+
+    for (int i = 1; i < 4; ++i) {
+        if (summ[i] > summ[max_index]) {
+            max_index = i;
         }
     }
+
     for (int i = 0; i < 3; i++) 
     {
-        M[i][index] = 0;
+        M[i][max_index] = 0;
     }
     
     cout << "Результирующая матрица M:" << endl;
