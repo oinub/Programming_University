@@ -37,6 +37,6 @@ public:
     void printBannedIngredients() const;    
 
     static void printList(const std::vector<Commission>& commissions,
-        const std::string& title = "Ñïèñîê êîìèññèé:");
+        const std::string& title = );
     static void printComparison(const Commission& c1, const Commission& c2);
 };
