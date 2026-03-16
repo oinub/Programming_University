@@ -25,20 +25,20 @@ bool Ingredient::operator==(const Ingredient& other) const {
 }
 
 Ingredient::~Ingredient() {}
+
 void Ingredient::print() const {
     std::cout << "  - " << name << ": " << std::fixed << std::setprecision(2)
-        << volume << " ед." << std::endl;
+        << volume << " РµРґ." << std::endl;
 }
 
 void Ingredient::printList(const std::vector<Ingredient>& ingredients,
     const std::string& title) {
     std::cout << "\n" << title << std::endl;
     if (ingredients.empty()) {
-        std::cout << "  (список пуст)" << std::endl;
+        std::cout << "  (СЃРїРёСЃРѕРє РїСѓСЃС‚)" << std::endl;
         return;
     }
 
     for (const auto& ing : ingredients) {
         ing.print();
     }
-}
