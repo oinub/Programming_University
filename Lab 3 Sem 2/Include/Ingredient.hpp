@@ -18,7 +18,7 @@ struct Ingredient {
     void print() const;
 
     static void printList(const std::vector<Ingredient>& ingredients,
-        const std::string& title = "Ингредиенты:");
+        const std::string& title = "Indredients:");
 
     ~Ingredient();
 };
