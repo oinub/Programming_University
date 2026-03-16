@@ -39,12 +39,12 @@ public:
     void setPrice(size_t newPrice);
     void setExpirationDate(int days);
 
-    void print() const;                    
-    void printFull() const;                
-    void printIngredients() const;          
-    void printExpirationStatus(int currentDate) const; 
+    void print() const;
+    void printFull() const;
+    void printIngredients() const;
+    void printExpirationStatus(int currentDate) const;
 
     static void printList(const std::vector<Product>& products,
-        const std::string& title = "Список продуктов:");
+        const std::string& title = "Commission:");
     static void printComparison(const Product& p1, const Product& p2);
 };
