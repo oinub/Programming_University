@@ -11,26 +11,20 @@ private:
     int inspectionDate;
 
 public:
-    // Конструкторы
     Commission();
     Commission(const std::string& address);
     Commission(const std::string& address,
         const std::vector<std::string>& bannedIngredients,
         int inspectionDate);
     Commission(const Commission& other);
-
-    // Операторы
     Commission& operator=(const Commission& other);
 
-    // Деструктор
     ~Commission();
 
-    // Геттеры
     std::string getAddress() const;
     std::vector<std::string> getBannedIngredients() const;
     int getInspectionDate() const;
 
-    // Сеттеры
     void setAddress(const std::string& address);
     void setBannedIngredients(const std::vector<std::string>& banned);
     void addBannedIngredient(const std::string& ingredient);
@@ -43,6 +37,6 @@ public:
     void printBannedIngredients() const;    
 
     static void printList(const std::vector<Commission>& commissions,
-        const std::string& title = "Список комиссий:");
+        const std::string& title = "Г‘ГЇГЁГ±Г®ГЄ ГЄГ®Г¬ГЁГ±Г±ГЁГ©:");
     static void printComparison(const Commission& c1, const Commission& c2);
 };
