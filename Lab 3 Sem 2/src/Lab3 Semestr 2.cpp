@@ -1,4 +1,4 @@
-﻿#include "Product.hpp"
+#include "Product.hpp"
 #include <iostream>
 #include <algorithm>
 #include <iomanip>
@@ -98,7 +98,6 @@ Product& Product::operator-=(const Product& other) {
     return *this;
 }
 
-// Геттеры
 std::string Product::getName() const { return name; }
 std::string Product::getDescription() const { return description; }
 int Product::getExpirationDate() const { return expirationDate; }
@@ -120,14 +119,12 @@ bool Product::isExpired(int currentDate) const {
 void Product::setPrice(size_t newPrice) { price = newPrice; }
 void Product::setExpirationDate(int days) { expirationDate = days; }
 
-// ✅ КРАТКАЯ ИНФОРМАЦИЯ (ОДИН МЕТОД!)
 void Product::print() const {
     std::cout << " " << name << " | Цена: " << price
         << " | Срок: " << expirationDate << " дн."
         << " | Место: " << place << std::endl;
 }
 
-// ✅ ПОЛНАЯ ИНФОРМАЦИЯ
 void Product::printFull() const {
     std::cout << "\n" << std::string(50, '=') << std::endl;
     std::cout << "           ПОЛНАЯ ИНФОРМАЦИЯ О ТОВАРЕ" << std::endl;
@@ -150,13 +147,11 @@ void Product::printFull() const {
     std::cout << std::string(50, '=') << std::endl;
 }
 
-// ✅ ТОЛЬКО ИНГРЕДИЕНТЫ
 void Product::printIngredients() const {
     std::cout << " Состав продукта '" << name << "':" << std::endl;
     Ingredient::printList(ingredients);
 }
 
-// ✅ СТАТУС СРОКА
 void Product::printExpirationStatus(int currentDate) const {
     std::cout << " Продукт '" << name << "': ";
     if (isExpired(currentDate)) {
@@ -169,7 +164,6 @@ void Product::printExpirationStatus(int currentDate) const {
     }
 }
 
-// ✅ СПИСОК ПРОДУКТОВ
 void Product::printList(const std::vector<Product>& products,
     const std::string& title) {
     std::cout << "\n" << title << std::endl;
@@ -186,7 +180,6 @@ void Product::printList(const std::vector<Product>& products,
     std::cout << "Всего продуктов: " << products.size() << std::endl;
 }
 
-// ✅ СРАВНЕНИЕ
 void Product::printComparison(const Product& p1, const Product& p2) {
     std::cout << "\n СРАВНЕНИЕ ПРОДУКТОВ:" << std::endl;
     std::cout << std::string(50, '-') << std::endl;
