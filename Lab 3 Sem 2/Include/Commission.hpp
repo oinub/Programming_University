@@ -17,8 +17,8 @@ public:
         const std::vector<std::string>& bannedIngredients,
         int inspectionDate);
     Commission(const Commission& other);
-    Commission& operator=(const Commission& other);
 
+    Commission& operator=(const Commission& other);
     ~Commission();
 
     std::string getAddress() const;
@@ -32,11 +32,11 @@ public:
 
     bool checkProduct(const Product& product) const;
 
-    void print() const;                
-    void printFull() const;                 
-    void printBannedIngredients() const;    
+    void print() const;
+    void printFull() const;
+    void printBannedIngredients() const;
 
     static void printList(const std::vector<Commission>& commissions,
-        const std::string& title = );
+        const std::string& title = "Commission:");
     static void printComparison(const Commission& c1, const Commission& c2);
 };
